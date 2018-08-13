@@ -10,18 +10,24 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 
-type Props = {};
 
 export default class Home extends Component<Props> {
 
+    constructor(props){
+        super(props)
+        this.state=({
+            name:"abc"+this.props.navigation.state.params.name
+        });
+    }
+
     static navigationOptions = {
-        title: "Home",
+        title: "第二页",
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>我的第二页</Text>
+                <Text style={styles.welcome}>我的第二页{this.state.name}</Text>
             </View>
         );
     }

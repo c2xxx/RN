@@ -1,22 +1,22 @@
-import {StackNavigator} from "react-navigation";
+import {
+    StackNavigator, TabBarBottom, TabNavigator,
+} from "react-navigation";
+import React, {Component} from 'react';
 
 import Home from "./src/Home"
 import Second from "./src/Second"
-const RouteConfigs = {
-    Home:{
-        screen:Home ,
-    },
-    Second:{
-        screen:Second ,
+
+
+const MyDemoApp = StackNavigator({
+    Home: {screen: Home},
+    Second: {screen: Second},
+});
+
+const AppNavigation = () => {
+   return <MyDemoApp/>
+}
+export default class App extends React.Component {
+    render() {
+        return (<AppNavigation/>);
     }
-}
-const StackNavigatorConfig = {
-    initialRouteName:'Home',
-    initialRouteParams: {initPara: '初始页面参数'},
-    navigationOptions: {
-        title: '标题',
-        // headerTitleStyle: {fontSize: 18, color: '#666666'},
-        headerStyle: {height: 48, backgroundColor: '#fff'},
-    },
-    cardStyle: {backgroundColor: "#ffffff"},
-}
+};

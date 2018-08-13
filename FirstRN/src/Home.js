@@ -1,45 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
-import StackNavigator from "react-navigation"
 
 type Props = {};
-const FirstRN = StackNavigator({
-    Welcome: {screen: App},
-    Home: {screen: Home},
-});
-
 
 export default class Home extends Component<Props> {
 
 
     static navigationOptions = {
-        title: "Home",
+        title: "首页",
     }
 
     /**
      * 点击按钮
      */
     onBtnClick = () => {
-        console.log("点击了按钮")
-        alert("点击了按钮");
-
-        const RootNavigator = StackNavigator({
-            Home: {
-                screen: HomeScreen
-            },
-            Chat: {
-                path: 'people/:name',
-                screen: ChatScreen
-            }
-        });
+        console.log("点击了按钮btn")
+        this.props.navigation.navigate('Second',{name:"chen"});
 
     };
 
