@@ -15,7 +15,7 @@ export default class Home extends Component<Props> {
      */
     onBtnClick = () => {
         console.log("点击了按钮btn")
-        this.props.navigation.navigate('Second',{name:"chen"});
+        this.props.navigation.navigate('Second', {name: "chen"});
 
     };
 
@@ -23,9 +23,15 @@ export default class Home extends Component<Props> {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>我的首页</Text>
-                <Button style={styles.instructions}
+                <Button style={styles.button}
                         title={"开始我的RN"}
                         onPress={this.onBtnClick}
+                />
+                <Button style={styles.button}
+                        title={"RN生命周期"}
+                        onPress={() => {
+                            this.props.navigation.navigate('RN02PageLife', {name: "chen"})
+                        }}
                 />
             </View>
         );
@@ -48,5 +54,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         marginBottom: 5,
+    },
+    button: {
+        textAlign: 'center',
+        marginTop: 10,
+        color: '#333333',
     },
 });
