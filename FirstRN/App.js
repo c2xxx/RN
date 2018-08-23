@@ -19,11 +19,13 @@ import RN15SubPage from "./src/models/RN15SubPage"
 import RN16MyConfirmDialog from "./src/models/RN16MyConfirmDialog"
 import RN17MultiClick from "./src/models/RN17MultiClick"
 import RN18Modal from "./src/models/RN18Modal"
+import RN19Icons from "./src/models/RN19Icons"
 import RN00BasePage from "./src/models/RN00BasePage"
 import RN00Menu from "./src/models/RN00Menu"
 import RN00 from "./src/models/RN00"
 
 const MyDemoApp = StackNavigator({
+    RN19Icons: {screen: RN19Icons},
     RN18Model: {screen: RN18Modal},
     RN16MyConfirmDialog: {screen: RN16MyConfirmDialog},
     RN17DoubleClick: {screen: RN17MultiClick},

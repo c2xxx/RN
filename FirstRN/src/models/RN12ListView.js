@@ -4,7 +4,7 @@ import {FlatList, Image, ScrollView, StyleSheet, Text, View} from "react-native"
 let list = [];
 export default class RN12ListView extends Component<Props> {
     //生成id的方法
-    _KeyExtractor = (item, index) => `key${item.id}`;
+    _KeyExtractor = (item, index) => `key${index}`;
 
     constructor(props) {
         super(props)
