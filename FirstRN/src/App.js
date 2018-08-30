@@ -22,6 +22,8 @@ import RN18Modal from "./models/RN18Modal"
 import RN19Icons from "./models/RN19Icons"
 import RN20Position from "./models/RN20Position"
 import RN21Chat from "./models/RN21Chat"
+import RN25Animate from "./models/RN25Animate"
+import RN25Animate2 from "./models/RN25Animate2"
 import RN00BasePage from "./models/RN00BasePage"
 import RN00Menu from "./models/RN00Menu"
 import RN00 from "./models/RN00"
@@ -30,6 +32,8 @@ const MyDemoApp = StackNavigator({
     Home: {screen: Home},
     RN20Position: {screen: RN20Position},
     RN21Chat: {screen: RN21Chat},
+    RN25Animate: {screen: RN25Animate},
+    RN25Animate2: {screen: RN25Animate2},
     RN19Icons: {screen: RN19Icons},
     RN18Model: {screen: RN18Modal},
     RN16MyConfirmDialog: {screen: RN16MyConfirmDialog},
