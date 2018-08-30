@@ -24,8 +24,10 @@ import RN19IOIcons from "./models/RN19IOIcons"
 import RN19IconCell from "./models/RN19IconCell"
 import RN20Position from "./models/RN20Position"
 import RN21Chat from "./models/RN21Chat"
-import RN22GroupCell from "./models/RN22GroupCell"
-import RN00BasePage from "./models/RN00BasePage"
+
+import RN25Animate from "./models/RN25Animate"
+import RN25Animate2 from "./models/RN25Animate2"
+import RN22GroupCell from "./models/RN22GroupCell"import RN00BasePage from "./models/RN00BasePage"
 import RN00Menu from "./models/RN00Menu"
 import RN00 from "./models/RN00"
 
@@ -33,12 +35,14 @@ const MyDemoApp = StackNavigator({
     Home: {screen: Home},
     RN20Position: {screen: RN20Position},
     RN21Chat: {screen: RN21Chat},
+    RN25Animate: {screen: RN25Animate},
+    RN25Animate2: {screen: RN25Animate2},
+    RN19Icons: {screen: RN19Icons},
+    RN18Model: {screen: RN18Modal},
+
     RN22GroupCell: {screen: RN22GroupCell},
     RN19IconCell: {screen: RN19IconCell},
-    RN19IconsSimple: {screen: RN19IconsSimple},
-    RN19IOIcons: {screen: RN19IOIcons},
-    RN18Model: {screen: RN18Modal},
-    RN16MyConfirmDialog: {screen: RN16MyConfirmDialog},
+    RN19IconsSimple: {screen: RN19IconsSimple},    RN16MyConfirmDialog: {screen: RN16MyConfirmDialog},
     RN17DoubleClick: {screen: RN17MultiClick},
     RN09ReWriteVIew: {screen: RN09ReWriteVIew},
     RN15SubPage: {screen: RN15SubPage},
