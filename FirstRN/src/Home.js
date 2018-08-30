@@ -13,7 +13,7 @@ export default class Home extends Component<Props> {
     menus = ['Home', 'RN00', 'RN00BasePage', 'RN00Menu', 'RN01SimplePage', 'RN02PageLife', 'RN03NativeCode',
         'RN04Image', 'RN05Video', 'RN06Http', 'RN07WebView', 'RN09ReWriteVIew', 'RN11SlideDownRefresh',
         'RN12ListView', 'RN13MyToolClass', 'RN14SingleInstance', 'RN15SubPage', 'RN16MyConfirmDialog',
-        'RN17DoubleClick', 'RN18Model', 'RN19Icons', 'RN20Position', 'RN21Chat', 'Second']
+        'RN17DoubleClick', 'RN18Model', 'RN19IconsSimple', 'RN19IOIcons', 'RN20Position', 'RN21Chat', 'Second']
 
 
     componentDidMount() {
@@ -21,7 +21,7 @@ export default class Home extends Component<Props> {
     }
 
     goPage() {
-        // this.props.navigation.navigate('RN21Chat', {name: "chen"});
+        this.props.navigation.navigate('RN19IconCell', {name: "chen"});
     }
 
     /**
