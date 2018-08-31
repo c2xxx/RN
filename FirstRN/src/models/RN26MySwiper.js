@@ -14,35 +14,52 @@ export default class RN26MySwiper extends Component<Props> {
 
     }
 
-    renderItem(name) {
+    renderItem(name, index) {
         return (
-            <View style={{
-                width: width - 40,
-                backgroundColor: "#ddd",
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: 10,
-                height: 100
-            }}>
+            <View
+                key={index.toString()}
+                style={{
+                    width: width - 60,
+                    backgroundColor: "#ddd",
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: 10,
+                    height: 100
+                }}>
                 <Text>{name}</Text>
             </View>
         )
     }
 
     list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    _scrollView;
+
+    _handleEndDrag(event: Object, _scrollView) {
+        var endX = event.nativeEvent.contentOffset.x;//取得拖拉后的位置
+        let contentWidth = width - 40;
+        console.log("width=", contentWidth, " currentX=", endX)
+        let index = Math.round(endX * 1.0 / contentWidth);
+        console.log("第几个Item=", index)
+        _scrollView.scrollTo({x: index * contentWidth - 20, animated: true});
+    }
 
 
     render() {
         let items = [];
-        this.list.map(item => {
-            items.push(this.renderItem(item));
+        this.list.map((item, index) => {
+            items.push(this.renderItem(item, index));
         })
         return (
             <View>
                 <ScrollView
-                    style={{width: width - 20, backgroundColor: "white"}}
+                    style={{width: width, backgroundColor: "white"}}
                     horizontal
-                    pagingEnabled>
+                    ref={(scrollView) => {
+                        _scrollView = scrollView;
+                    }}
+                    onScrollEndDrag={(event) => {
+                        this._handleEndDrag(event, _scrollView);
+                    }}>
                     {items}
                 </ScrollView>
             </View>
