@@ -15,8 +15,26 @@ export default class Home extends Component<Props> {
     menus = ['Home', 'RN00', 'RN00BasePage', 'RN00Menu', 'RN01SimplePage', 'RN02PageLife', 'RN03NativeCode',
         'RN04Image', 'RN05Video', 'RN06Http', 'RN07WebView', 'RN09ReWriteVIew', 'RN11SlideDownRefresh',
         'RN12ListView', 'RN13MyToolClass', 'RN14SingleInstance', 'RN15SubPage', 'RN16MyConfirmDialog',
-        'RN17DoubleClick', 'RN18Model', 'RN19Icons', 'RN20Position', 'RN21Chat', 'Second']
-        'RN17DoubleClick', 'RN18Model', 'RN19IconsSimple', 'RN19IOIcons', 'RN20Position', 'RN21Chat','RN25Animate','RN25Animate2', 'Second']
+        'RN17DoubleClick', 'RN18Model', 'RN19Icons', 'RN20Position', 'RN21Chat', 'Second', 'RN17DoubleClick'
+        ,
+        'RN18Model'
+        ,
+        'RN19IconsSimple'
+        ,
+        'RN19IOIcons'
+        ,
+        'RN20Position'
+        ,
+        'RN21Chat'
+        ,
+        'RN25Animate'
+        ,
+        'RN25Animate2'
+        ,
+        'RN26MySwiper'
+        ,
+        'Second'
+    ]
 
     componentDidMount() {
         this.goPage();
@@ -24,7 +42,8 @@ export default class Home extends Component<Props> {
 
     goPage() {
 
-        this.props.navigation.navigate('RN25Animate2', {name: "chen"});    }
+        this.props.navigation.navigate('RN26MySwiper', {name: "chen"});
+    }
 
     /**
      * 点击按钮
@@ -41,10 +60,10 @@ export default class Home extends Component<Props> {
                         onPress={this.onBtnClick}
                 />
                 {/*<TouchableOpacity>*/}
-                    {/*<View style={styles.menu_item_container}>*/}
-                        {/*<Text style={styles.menu_item_title}>01、基本实例</Text>*/}
-                        {/*<Text style={styles.menu_item_subtitle}>RN03XXXX</Text>*/}
-                    {/*</View>*/}
+                {/*<View style={styles.menu_item_container}>*/}
+                {/*<Text style={styles.menu_item_title}>01、基本实例</Text>*/}
+                {/*<Text style={styles.menu_item_subtitle}>RN03XXXX</Text>*/}
+                {/*</View>*/}
                 {/*</TouchableOpacity>*/}
                 <FlatList
                     renderItem={this.renderMenu.bind(this)}
