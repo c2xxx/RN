@@ -27,6 +27,10 @@ export default class Home extends Component<Props> {
         ,
         'RN21Chat'
         ,
+        'RN22GroupCell'
+        ,
+        'RN23Promise'
+        ,
         'RN25Animate'
         ,
         'RN25Animate2'
@@ -42,7 +46,7 @@ export default class Home extends Component<Props> {
 
     goPage() {
 
-        this.props.navigation.navigate('RN26MySwiper', {name: "chen"});
+        this.props.navigation.navigate('RN23Promise', {name: "chen"});
     }
 
     /**

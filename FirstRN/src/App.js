@@ -3,6 +3,7 @@ import React from 'react';
 
 import Home from "./Home"
 import Second from "./Second"
+import RN00BaseDemo from "./models/RN00BaseDemo"
 import RN01SimplePage from "./models/RN01SimplePage"
 import RN02PageLife from "./models/RN02PageLife"
 import RN03NativeCode from "./models/RN03NativeCode"
@@ -28,6 +29,7 @@ import RN25Animate from "./models/RN25Animate"
 import RN25Animate2 from "./models/RN25Animate2"
 import RN26MySwiper from "./models/RN26MySwiper"
 import RN22GroupCell from "./models/RN22GroupCell"
+import RN23Promise from "./models/RN23Promise"
 import RN00BasePage from "./models/RN00BasePage"
 import RN00Menu from "./models/RN00Menu"
 import RN00 from "./models/RN00"
@@ -40,7 +42,9 @@ const MyDemoApp = StackNavigator({
     RN25Animate2: {screen: RN25Animate2},
     RN18Model: {screen: RN18Modal},
 
+    RN00BaseDemo: {screen: RN00BaseDemo},
     RN22GroupCell: {screen: RN22GroupCell},
+    RN23Promise: {screen: RN23Promise},
     RN26MySwiper: {screen: RN26MySwiper},
     RN19IconCell: {screen: RN19IconCell},
     RN19IconsSimple: {screen: RN19IconsSimple},
