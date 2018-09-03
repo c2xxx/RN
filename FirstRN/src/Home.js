@@ -46,7 +46,7 @@ export default class Home extends Component<Props> {
 
     goPage() {
 
-        this.props.navigation.navigate('RN23Promise', {name: "chen"});
+        this.props.navigation.navigate('RN27Permission', {name: "chen"});
     }
 
     /**

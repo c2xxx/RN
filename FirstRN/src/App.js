@@ -30,6 +30,7 @@ import RN25Animate2 from "./models/RN25Animate2"
 import RN26MySwiper from "./models/RN26MySwiper"
 import RN22GroupCell from "./models/RN22GroupCell"
 import RN23Promise from "./models/RN23Promise"
+import RN27Permission from "./models/RN27Permission"
 import RN00BasePage from "./models/RN00BasePage"
 import RN00Menu from "./models/RN00Menu"
 import RN00 from "./models/RN00"
@@ -45,6 +46,7 @@ const MyDemoApp = StackNavigator({
     RN00BaseDemo: {screen: RN00BaseDemo},
     RN22GroupCell: {screen: RN22GroupCell},
     RN23Promise: {screen: RN23Promise},
+    RN27Permission: {screen: RN27Permission},
     RN26MySwiper: {screen: RN26MySwiper},
     RN19IconCell: {screen: RN19IconCell},
     RN19IconsSimple: {screen: RN19IconsSimple},

@@ -9,7 +9,7 @@ export default class RN00BaseDemo extends BasePage {
 
 
     initButtons() {
-        this.buttonMap.doClickA = this.doClickA.bind(this);
+        this.buttonMap.checkCameraPermission = this.doClickA.bind(this);
         this.buttonMap.doClickB = this.doClickB.bind(this);
     }
 

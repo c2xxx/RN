@@ -55,7 +55,7 @@ export default class RN26MySwiper extends Component<Props> {
                     style={{width: width, backgroundColor: "white"}}
                     horizontal
                     ref={(scrollView) => {
-                        _scrollView = scrollView;
+                        this._scrollView = scrollView;
                     }}
                     onScrollEndDrag={(event) => {
                         this._handleEndDrag(event, _scrollView);
