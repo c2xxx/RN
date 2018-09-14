@@ -23,7 +23,7 @@ export default class RN11SlideDownRefresh extends Component<Props> {
     _onRefresh() {
         console.log("下拉刷新")
         this.setState({
-            refreshing: true,
+            duringInitData: true,
         });
         setTimeout(() => {
             this.endRefresh();
@@ -33,7 +33,7 @@ export default class RN11SlideDownRefresh extends Component<Props> {
     endRefresh() {
         console.log("刷新结束")
         this.setState({
-            refreshing: false,
+            duringInitData: false,
         });
     }
 

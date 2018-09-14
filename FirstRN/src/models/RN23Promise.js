@@ -94,8 +94,26 @@ export default class RN23Promise extends BasePage {
             .then(() => {
                 this.println("后续步骤3")
             })
-            .catch(() => {
-                this.println("异常")
+            .catch((error) => {
+                //打印异常
+                this.println("异常1" + error)
+                //抛出，后续可以继续处理异常
+                throw error;
+            })
+            .catch((error) => {
+                this.println("异常2" + error)
+                //抛出，后续可以继续处理异常
+                return Promise.reject(123);
+            })
+            .catch((error) => {
+                this.println("异常3" + error)
+            })
+            .then(() => {
+                this.println("后续步骤4")
+            })
+            .then(() => '333')
+            .then((data) => {
+                this.println("后续步骤5" + data)
             })
     }
 
@@ -108,5 +126,19 @@ export default class RN23Promise extends BasePage {
             .then(() => {
                 this.println("后续步骤1" + e.x.x.x.x)
             })
+    }
+
+    promiseQueue() {
+        let promise1 = new Promise(() => {
+            this.println("PromiseA")
+        })
+        let promise2 = new Promise(() => {
+            this.println("PromiseA")
+        })
+        //
+        // Promise.race()all([promise1, promise2])
+        //     .then(() => {
+        //         this.println("后续步骤1" + e.x.x.x.x)
+        //     })
     }
 }

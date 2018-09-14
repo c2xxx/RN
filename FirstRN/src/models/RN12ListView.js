@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {FlatList, Image, ScrollView, StyleSheet, Text, View} from "react-native"
+import {FlatList, Image, StyleSheet, Text, View} from "react-native"
+import ToastUtil from "../utils/ToastUtil";
 
-let list = [];
 export default class RN12ListView extends Component<Props> {
     //生成id的方法
     _KeyExtractor = (item, index) => `key${index}`;
@@ -9,10 +9,13 @@ export default class RN12ListView extends Component<Props> {
     constructor(props) {
         super(props)
         this.state = ({
-            refreshing: true,
+            duringInitData: true,
+            threshold: 0,
+            list: [],
         });
         this._onRefresh = this._onRefresh.bind(this);
     }
+
 
     static navigationOptions = {
         title: "RN12列表数据"
@@ -24,14 +27,14 @@ export default class RN12ListView extends Component<Props> {
     }
 
     componentWillMount() {
+        this.setState({
+            duringInitData: true,
+        });
         this._onRefresh();
     }
 
     _onRefresh() {
         console.log("下拉刷新")
-        this.setState({
-            refreshing: true,
-        });
         setTimeout(() => {
             this.endRefresh();
         }, 500)
@@ -42,7 +45,7 @@ export default class RN12ListView extends Component<Props> {
         let imageB = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534227246201&di=b8a1c5f630b32be0c0802f53045ae82e&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160609%2F9-160609112234.jpg";
 
         for (let i = 0; i < 20; i++) {
-            list.push({
+            this.state.list.push({
                 id: i,
                 name: "陈" + i,
                 age: 3 + i,
@@ -51,12 +54,12 @@ export default class RN12ListView extends Component<Props> {
         }
         console.log("刷新结束")
         this.setState({
-            refreshing: false,
+            duringInitData: false,
         });
     }
 
     render() {
-        if (this.state.refreshing) {
+        if (this.state.duringInitData) {
             return this.renderLoading();
         } else {
             return this.renderContent();
@@ -69,15 +72,37 @@ export default class RN12ListView extends Component<Props> {
         </View>
     }
 
+
+    headerOrFooterComponent(x) {
+        let i = x === 1 ? '我是头部' : '我是尾部------';
+        return (
+            this.state.list.length !== 0 ?
+                <View style={{alignItems: 'center', backgroundColor: 'green'}}>
+                    <Text>{i}</Text>
+                </View> : null
+        )
+    }
+
     renderContent() {
-        return <ScrollView>
-            <Text style={style.btnText}>数据量：{list.length}</Text>
+        return <View>
+            <Text style={style.btnText}>数据量：{this.state.list.length}</Text>
             <FlatList
-                data={list}
+                data={this.state.list}
                 renderItem={this.renderMV}
-                keyExtractor={this._KeyExtractor}//这一步可以不用，不过会警告
-            />
-        </ScrollView>
+                keyExtractor={(item, index) => '' + index}//这一步可以不用，不过会警告
+                refreshing={false}
+                ListFooterComponent={() => this.headerOrFooterComponent(2)}
+                ListHeaderComponent={() => this.headerOrFooterComponent(1)}
+                onEndReachedThreshold={1}
+                onEndReached={() => {
+                    // this._onRefresh()
+                    ToastUtil.show("滚动到底部")
+                }}
+                onRefresh={() => {
+                    this._onRefresh()
+                    ToastUtil.show("刷新开始")
+                }}/>
+        </View>
     }
 
     renderMV({item}) {

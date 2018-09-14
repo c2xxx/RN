@@ -12,41 +12,22 @@ export default class Home extends Component<Props> {
         title: "首页",
     }
 
-    menus = ['Home', 'RN00', 'RN00BasePage', 'RN00Menu', 'RN01SimplePage', 'RN02PageLife', 'RN03NativeCode',
-        'RN04Image', 'RN05Video', 'RN06Http', 'RN07WebView', 'RN09ReWriteVIew', 'RN11SlideDownRefresh',
-        'RN12ListView', 'RN13MyToolClass', 'RN14SingleInstance', 'RN15SubPage', 'RN16MyConfirmDialog',
-        'RN17DoubleClick', 'RN18Model', 'RN19Icons', 'RN20Position', 'RN21Chat', 'Second', 'RN17DoubleClick'
-        ,
-        'RN18Model'
-        ,
-        'RN19IconsSimple'
-        ,
-        'RN19IOIcons'
-        ,
-        'RN20Position'
-        ,
-        'RN21Chat'
-        ,
-        'RN22GroupCell'
-        ,
-        'RN23Promise'
-        ,
-        'RN25Animate'
-        ,
-        'RN25Animate2'
-        ,
-        'RN26MySwiper'
-        ,
-        'Second'
-    ]
+    menus = ['Home', 'RN00', 'RN00BaseDemo', 'RN00BasePage', 'RN00Menu', 'RN01SimplePage', 'RN02PageLife',
+        'RN03NativeCode', 'RN04Image', 'RN05Video', 'RN06Http', 'RN07WebView', 'RN09ReWriteVIew',
+        'RN11SlideDownRefresh', 'RN12ListView', 'RN13MyToolClass', 'RN14SingleInstance', 'RN15SubPage',
+        'RN16MyConfirmDialog', 'RN17DoubleClick', 'RN18Model', 'RN19IOIcons', 'RN19IconCell', 'RN19IconEvil',
+        'RN19IconsSimple', 'RN20Position', 'RN21Chat', 'RN22GroupCell', 'RN23Promise', 'RN25Animate',
+        'RN25Animate2', 'RN26MySwiper', 'RN27Permission', 'RN27PermissionUtil', 'RN28SelectOption', 'RN28SelectOption2']
+
 
     componentDidMount() {
+        this.menus.reverse()
         this.goPage();
     }
 
     goPage() {
 
-        this.props.navigation.navigate('RN27Permission', {name: "chen"});
+        this.props.navigation.navigate('RN12ListView', {name: "chen"});
     }
 
     /**

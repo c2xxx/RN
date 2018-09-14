@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {FlatList, StyleSheet, TouchableOpacity, Text, View} from "react-native"
 
-import Icon from 'react-native-vector-icons/EvilIcons';
+import Icon from 'react-native-vector-icons/EvilIcons'
 import ToastUtil from '../utils/ToastUtil';
 
 

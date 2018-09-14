@@ -22,6 +22,8 @@ import RN17MultiClick from "./models/RN17MultiClick"
 import RN18Modal from "./models/RN18Modal"
 import RN19IconsSimple from "./models/RN19IconsSimple"
 import RN19IconCell from "./models/RN19IconCell"
+import RN19IconEvil from "./models/RN19IconEvil"
+import RN19IOIcons from "./models/RN19IOIcons"
 import RN20Position from "./models/RN20Position"
 import RN21Chat from "./models/RN21Chat"
 
@@ -30,7 +32,10 @@ import RN25Animate2 from "./models/RN25Animate2"
 import RN26MySwiper from "./models/RN26MySwiper"
 import RN22GroupCell from "./models/RN22GroupCell"
 import RN23Promise from "./models/RN23Promise"
+import RN27PermissionUtil from "./models/RN27PermissionUtil"
 import RN27Permission from "./models/RN27Permission"
+import RN28SelectOption from "./models/RN28SelectOption"
+import RN28SelectOption2 from "./models/RN28SelectOption2"
 import RN00BasePage from "./models/RN00BasePage"
 import RN00Menu from "./models/RN00Menu"
 import RN00 from "./models/RN00"
@@ -47,8 +52,11 @@ const MyDemoApp = StackNavigator({
     RN22GroupCell: {screen: RN22GroupCell},
     RN23Promise: {screen: RN23Promise},
     RN27Permission: {screen: RN27Permission},
+    RN27PermissionUtil: {screen: RN27PermissionUtil},
     RN26MySwiper: {screen: RN26MySwiper},
     RN19IconCell: {screen: RN19IconCell},
+    RN19IconEvil: {screen: RN19IconEvil},
+    RN19IOIcons: {screen: RN19IOIcons},
     RN19IconsSimple: {screen: RN19IconsSimple},
     RN16MyConfirmDialog: {screen: RN16MyConfirmDialog},
     RN17DoubleClick: {screen: RN17MultiClick},
@@ -68,6 +76,8 @@ const MyDemoApp = StackNavigator({
     RN04Image: {screen: RNStudy04Image},
     RN06Http: {screen: RN06Http},
     RN07WebView: {screen: RN07WebView},
+    RN28SelectOption: {screen: RN28SelectOption},
+    RN28SelectOption2: {screen: RN28SelectOption2},
     Second: {screen: Second},
 });
 

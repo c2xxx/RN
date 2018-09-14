@@ -58,7 +58,7 @@ export default class RN26MySwiper extends Component<Props> {
                         this._scrollView = scrollView;
                     }}
                     onScrollEndDrag={(event) => {
-                        this._handleEndDrag(event, _scrollView);
+                        this._handleEndDrag(event, this._scrollView);
                     }}>
                     {items}
                 </ScrollView>
