@@ -17,7 +17,8 @@ export default class Home extends Component<Props> {
         'RN11SlideDownRefresh', 'RN12ListView', 'RN13MyToolClass', 'RN14SingleInstance', 'RN15SubPage',
         'RN16MyConfirmDialog', 'RN17DoubleClick', 'RN18Model', 'RN19IOIcons', 'RN19IconCell', 'RN19IconEvil',
         'RN19IconsSimple', 'RN20Position', 'RN21Chat', 'RN22GroupCell', 'RN23Promise', 'RN25Animate',
-        'RN25Animate2', 'RN26MySwiper', 'RN27Permission', 'RN27PermissionUtil', 'RN28SelectOption', 'RN28SelectOption2']
+        'RN25Animate2', 'RN26MySwiper', 'RN27Permission', 'RN27PermissionUtil', 'RN28SelectOption', 'RN28SelectOption2'
+        , 'RN29DialogInput', 'RN29DialogInput2', 'RN30Test', 'RN31ToastView', 'RN32SlideRefresh', 'RNSelector']
 
 
     componentDidMount() {
@@ -27,7 +28,7 @@ export default class Home extends Component<Props> {
 
     goPage() {
 
-        this.props.navigation.navigate('RN12ListView', {name: "chen"});
+        this.props.navigation.navigate('RNSelector', {name: "chen"});
     }
 
     /**
@@ -53,9 +54,7 @@ export default class Home extends Component<Props> {
                 <FlatList
                     renderItem={this.renderMenu.bind(this)}
                     data={this.menus}
-                    keyExtractor={(item, index) => {
-                        return `key${index}`
-                    }}
+                    keyExtractor={(item, index) => `key${index}`}
                     numColumns={1}/>
             </View>
         );
