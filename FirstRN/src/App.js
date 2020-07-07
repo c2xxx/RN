@@ -36,9 +36,15 @@ import RN27PermissionUtil from "./models/RN27PermissionUtil"
 import RN27Permission from "./models/RN27Permission"
 import RN28SelectOption from "./models/RN28SelectOption"
 import RN28SelectOption2 from "./models/RN28SelectOption2"
+import RN29DialogInput from "./models/RN29DialogInput"
+import RN29DialogInput2 from "./models/RN29DialogInput2"
+import RN30Test from "./models/RN30Test"
+import RN31ToastView from "./models/RN31ToastView"
+import RN32SlideRefresh from "./models/RN32SlideRefresh"
 import RN00BasePage from "./models/RN00BasePage"
 import RN00Menu from "./models/RN00Menu"
 import RN00 from "./models/RN00"
+import {NviPlugin} from "./NviPlugin";
 
 const MyDemoApp = StackNavigator({
     Home: {screen: Home},
@@ -78,13 +84,28 @@ const MyDemoApp = StackNavigator({
     RN07WebView: {screen: RN07WebView},
     RN28SelectOption: {screen: RN28SelectOption},
     RN28SelectOption2: {screen: RN28SelectOption2},
+    RN29DialogInput: {screen: RN29DialogInput},
+    RN29DialogInput2: {screen: RN29DialogInput2},
+    RN30Test: {screen: RN30Test},
+    RN31ToastView: {screen: RN31ToastView},
+    RN32SlideRefresh: {screen: RN32SlideRefresh},
     Second: {screen: Second},
+    ...NviPlugin
 });
 
 const AppNavigation = () => {
     return <MyDemoApp/>
 }
 export default class App extends React.Component {
+
+    componentDidMount() {
+        console.log("APP componentDidMount")
+    }
+
+    componentWillUnmount() {
+        console.log("APP componentWillUnmount")
+    }
+
     render() {
         return (<AppNavigation/>);
     }
