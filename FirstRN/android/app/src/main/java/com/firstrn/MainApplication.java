@@ -2,6 +2,7 @@ package com.firstrn;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.beefe.picker.PickerViewPackage;
 import com.brentvatne.react.ReactVideoPackage;
@@ -68,4 +69,11 @@ public class MainApplication extends Application implements ReactApplication {
     public static Context getContext() {
         return context;
     }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
 }
